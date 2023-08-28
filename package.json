@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "aws-amplify": "^5.3.10"
+    "aws-amplify": "^5.3.10",
+    "inquirer": "^9.2.10"
   }
 }
