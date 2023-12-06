@@ -1,5 +1,7 @@
 # Example of aws-amplify usage for phone number + code auth
 
+This repo has been written for `aws-amplify` version 5. Later the login has been rewritten to version 6. Each file in this repo indicates the version compatibility.
+
 Install
 
 ```
