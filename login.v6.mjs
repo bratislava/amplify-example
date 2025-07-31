@@ -12,6 +12,7 @@ import {
   AWS_USER_POOL_ID,
   AWS_USER_POOL_WEB_CLIENT_ID,
   STATIC_PASS,
+  TOKEN,
 } from "./constants.mjs";
 
 Amplify.configure({
@@ -38,7 +39,12 @@ try {
     username: PHONE,
     ...(PHONE === "+42100000000"
       ? { options: { authFlowType: "CUSTOM_WITHOUT_SRP" } }
-      : { password: STATIC_PASS }),
+      : {
+          password: STATIC_PASS,
+          options: {
+            clientMetadata: { token: TOKEN, captchaErrorCode, prefix },
+          },
+        }),
   });
 
   console.log(loginResult);
